@@ -1,0 +1,129 @@
+form {
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+form input {
+    appearance: none;
+    height: 38px;
+    border: none;
+    border-bottom: 1px solid;
+    border-color: var(--color-border);
+    padding-left: 8px;
+    width: 100%;
+    font-size: var(--font-18);
+    color: var(--color-white);
+    background: var(--color-primary);
+    margin-top: 1.5rem;
+}
+form label {
+    margin-top: 1.5rem;
+    color: var(--color-tertiary);
+}
+form input:hover {
+    border-color: var(--color-tertiary);
+}
+form input:focus-visible {
+    outline: none;
+    border-color: var(--color-tertiary);
+}
+
+.select input {
+    height: unset;
+}
+
+legend {
+    color: var(--color-white);
+}
+fieldset {
+    margin: 3rem 0 1rem;
+    padding: 0.5rem 0.5rem 1.5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type='submit'] {
+    background-color: var(--color-tertiary);
+    color: var(--color-white);
+    border: none;
+    margin-top: 2rem;
+    max-width: max-content;
+    padding: 0 1rem;
+    margin-left: auto;
+    border-radius: 4px;
+}
+
+input::placeholder {
+    color: var(--color-white-opacity);
+}
+
+.dates-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.dates-container > div {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+.dates-container input {
+    margin-top: 0.5rem;
+}
+.dates-container .sr-only + div div input {
+    margin-top: 3rem;
+}
+
+/* .react-datepicker-wrapper {
+  max-width: 45%;
+} */
+.react-datepicker__input-container {
+    max-width: 95%;
+}
+/*Selects */
+.select svg {
+    fill: var(--color-tertiary);
+}
+/* div.react-select__control:hover,
+div.react-select__control {
+  box-shadow: none;
+  border: none;
+} */
+div.react-select__control,
+div.react-select__control:hover {
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid;
+    border-color: var(--color-border);
+    box-shadow: none;
+}
+
+div.react-select__control:hover {
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid;
+    border-color: var(--color-tertiary);
+    box-shadow: none;
+}
+
+.react-select__menu-list {
+    background: var(--color-secondary);
+}
+
+.react-select__option:hover {
+    color: var(--color-primary);
+}
+
+div.react-select__single-value {
+    color: var(--color-white);
+}
+
+.react-select__indicator-separator {
+    display: none;
+}

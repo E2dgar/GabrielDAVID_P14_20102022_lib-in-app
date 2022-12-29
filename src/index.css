@@ -1,0 +1,58 @@
+:root {
+    --color-primary: #1b1b1b;
+    --color-secondary: #323238;
+    --color-tertiary: #2684ff;
+    --color-label: #97d5cb;
+    --color-black: #222;
+    --color-white: rgb(255, 255, 255);
+    --color-white-opacity: rgba(255, 255, 255, 0.5);
+    --color-border: hsl(0, 0%, 80%);
+    --color-error: #ee6352;
+    --color-bkg: #4a4747;
+    --color-link: #e59f71;
+    /* CSS HEX */
+    --middle-blue-green: #97d5cbff;
+    --tan-crayola: #e59f71ff;
+    --sinopia: #ba5a31ff;
+    --rich-black-fogra-39: #0c0c0cff;
+    --russian-violet: #3e2f5bff;
+
+    /* CSS HSL */
+    --middle-blue-green: hsla(170, 42%, 71%, 1);
+    --tan-crayola: hsla(24, 69%, 67%, 1);
+    --sinopia: hsla(18, 58%, 46%, 1);
+    --rich-black-fogra-39: hsla(0, 0%, 5%, 1);
+    --russian-violet: hsla(260, 32%, 27%, 1);
+    --font-16: 1rem;
+    --font-18: 1.125rem;
+    --font-24: 1.5rem;
+    --font-26: 1.625rem;
+    --font-32: 2rem;
+}
+
+* {
+    font-family: Montserrat, sans-serif;
+    color: var(--color-white);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--color-bkg);
+}
+
+.sr-only {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
