@@ -1,7 +1,5 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { ROUTES } from '../../constants/api';
-import data from '../../__mocked/data.json';
-import { get } from '../../api/http';
 
 type StateTypes = {
     status: string;

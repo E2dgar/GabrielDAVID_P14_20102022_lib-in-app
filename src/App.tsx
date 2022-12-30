@@ -2,7 +2,7 @@ import './App.css';
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FormPage } from './components/pages/form';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Table } from './components/pages/Table';
 import { getEmployees } from './redux/reducers/employeesSlice';
 import { AppDispatch } from './redux/store';

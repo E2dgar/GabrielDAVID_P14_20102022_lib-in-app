@@ -3,7 +3,7 @@ import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import DatePicker from 'react-datepicker';
 import Select from 'react-select';
 import { Error } from '../atoms/error';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../redux/store';
 import { addEntrie } from '../../redux/reducers/employeesSlice';
 import { formatDate } from '../../helpers';
