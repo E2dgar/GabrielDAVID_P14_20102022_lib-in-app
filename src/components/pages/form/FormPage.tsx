@@ -8,7 +8,7 @@ export const FormPage: FC = () => {
         <>
             <header>
                 <h1>HRnet</h1>
-                <LinkItem to="#" label="View Current Employees" />
+                <LinkItem to="datatable" label="View Current Employees" />
             </header>
 
             <main>

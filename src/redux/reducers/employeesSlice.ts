@@ -29,7 +29,11 @@ export const getEmployees = createAsyncThunk(
 const employeesSlice = createSlice({
     name: 'employees',
     initialState: initialState,
-    reducers: {},
+    reducers: {
+        addEntrie: (state, action) => {
+            state.data.push(action.payload);
+        }
+    },
     extraReducers(builder) {
         builder
             .addCase(getEmployees.pending, (state) => {
@@ -39,9 +43,12 @@ const employeesSlice = createSlice({
                 state.status = 'failed';
             })
             .addCase(getEmployees.fulfilled, (state, action) => {
+                state.status = 'fulfilled';
                 state.data = action.payload;
             });
     }
 });
+
+export const { addEntrie } = employeesSlice.actions;
 
 export default employeesSlice.reducer;

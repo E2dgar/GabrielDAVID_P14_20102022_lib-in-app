@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FormPage } from './components/pages/form';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { Table } from './components/pages/Table';
 import { getEmployees } from './redux/reducers/employeesSlice';
 import { AppDispatch } from './redux/store';
 
@@ -18,7 +18,7 @@ const App = () => {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<FormPage />} />
-                    {/* <Route path="/datatable" element={<Table />} /> */}
+                    <Route path="/datatable" element={<Table />} />
                     {/* {<Route path="*" element={<Page404 />} /> */}
                 </Routes>
             </BrowserRouter>

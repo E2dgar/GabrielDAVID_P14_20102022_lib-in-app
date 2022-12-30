@@ -3,6 +3,10 @@ import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import DatePicker from 'react-datepicker';
 import Select from 'react-select';
 import { Error } from '../atoms/error';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch } from '../../redux/store';
+import { addEntrie } from '../../redux/reducers/employeesSlice';
+import { formatDate } from '../../helpers';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -16,15 +20,17 @@ interface Inputs {
 }
 
 interface InputsForm extends Inputs {
-    birth: Date;
+    dateOfBirth: Date;
     startDate: Date;
 }
 interface EmployeeData extends Inputs {
-    birth: Date | string;
+    dateOfBirth: Date | string;
     startDate: Date | string;
 }
 
 export const Form = () => {
+    const dispatch: AppDispatch = useDispatch();
+
     const {
         register,
         handleSubmit,
@@ -33,14 +39,20 @@ export const Form = () => {
         formState: { errors }
     } = useForm<InputsForm>();
 
-    const watchBirth = watch('birth', undefined);
+    const watchBirth = watch('dateOfBirth', undefined);
     const watchStartDate = watch('startDate', undefined);
 
     const onSubmit: SubmitHandler<InputsForm> = (data) => {
         let formatedData: EmployeeData = { ...data };
 
-        formatedData.birth = data.birth.toString();
-        formatedData.startDate = data.startDate.toString();
+        formatedData.dateOfBirth = formatDate(data.dateOfBirth);
+        formatedData.startDate = formatDate(data.startDate);
+
+        try {
+            dispatch(addEntrie(formatedData));
+        } catch (error) {
+            console.log(error);
+        }
 
         console.log(formatedData);
     };
@@ -74,7 +86,7 @@ export const Form = () => {
                     </label>
                     <Controller
                         control={control}
-                        name="birth"
+                        name="dateOfBirth"
                         rules={{ required: true }}
                         render={({ field }) => (
                             <DatePicker
@@ -84,7 +96,7 @@ export const Form = () => {
                             />
                         )}
                     />
-                    {errors.birth && <Error />}
+                    {errors.dateOfBirth && <Error />}
                 </div>
                 <div>
                     <label className={`${watchStartDate ? '' : 'sr-only'}`}>
