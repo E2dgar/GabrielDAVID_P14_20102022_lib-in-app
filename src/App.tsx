@@ -1,8 +1,18 @@
 import './App.css';
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FormPage } from './components/pages/form';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { getEmployees } from './redux/reducers/employeesSlice';
+import { AppDispatch } from './redux/store';
 
 const App = () => {
+    const dispatch: AppDispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getEmployees());
+    });
     return (
         <div className="App">
             <BrowserRouter>
