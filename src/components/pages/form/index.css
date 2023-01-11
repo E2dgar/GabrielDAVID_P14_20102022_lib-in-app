@@ -27,3 +27,7 @@ main {
     width: 100%;
     max-width: 500px;
 }
+
+main h2 {
+    color: white;
+}

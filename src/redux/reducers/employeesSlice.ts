@@ -14,7 +14,7 @@ const initialState: StateTypes = {
 export const getEmployees = createAsyncThunk(
     'employees/getEmployees',
     async () => {
-        const response = await fetch(ROUTES.ROWS100, {
+        const response = await fetch(ROUTES.ROWS1000, {
             method: 'GET',
             headers: {
                 Accept: 'application/json',
