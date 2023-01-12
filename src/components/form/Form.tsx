@@ -28,6 +28,10 @@ interface EmployeeData extends Inputs {
     startDate: Date | string;
 }
 
+type FormT = {
+    openModal: () => void;
+};
+
 const stateOptions = [
     { label: 'Alabama', value: 'AL' },
     { label: 'Alaska', value: 'AK' },
@@ -96,7 +100,7 @@ const deptOptions = [
     { value: 'Training', label: 'Training' }
 ];
 
-export const Form = () => {
+export const Form = ({ openModal }: FormT) => {
     const dispatch: AppDispatch = useDispatch();
 
     const {
@@ -118,6 +122,7 @@ export const Form = () => {
 
         try {
             dispatch(addEntrie(formatedData));
+            openModal();
         } catch (error) {
             console.log(error);
         }
