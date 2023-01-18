@@ -30,4 +30,4 @@ This app is using :
 
 ### Docs
 
-You can find docs <a href="https://e2dgar.github.io/GabrielDAVID_P14_20102022_lib-in-app">here</a>
+You can find full documentation <a href="https://e2dgar.github.io/GabrielDAVID_P14_20102022_lib-in-app">here</a>
