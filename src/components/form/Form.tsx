@@ -130,12 +130,6 @@ export const Form = ({ openModal }: FormT) => {
         console.log(formatedData);
     };
 
-    const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
-    ];
-
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <label className="sr-only">First Name</label>

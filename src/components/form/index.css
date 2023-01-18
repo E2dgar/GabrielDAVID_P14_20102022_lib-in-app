@@ -78,9 +78,6 @@ input::placeholder {
     margin-top: 3rem;
 }
 
-/* .react-datepicker-wrapper {
-  max-width: 45%;
-} */
 .react-datepicker__input-container {
     max-width: 95%;
 }
@@ -88,11 +85,7 @@ input::placeholder {
 .select svg {
     fill: var(--color-tertiary);
 }
-/* div.react-select__control:hover,
-div.react-select__control {
-  box-shadow: none;
-  border: none;
-} */
+
 div.react-select__control,
 div.react-select__control:hover {
     background-color: var(--color-primary);
@@ -113,7 +106,7 @@ div.react-select__control:hover {
 }
 
 .react-select__menu-list {
-    background: var(--color-secondary);
+    background: white;
 }
 
 .react-select__option:hover {

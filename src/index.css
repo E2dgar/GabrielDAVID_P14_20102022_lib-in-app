@@ -11,11 +11,11 @@
     --color-bkg: #4a4747;
     --color-link: #e59f71;
     /* CSS HEX */
-    --middle-blue-green: #97d5cbff;
+    /* --middle-blue-green: #97d5cbff;
     --tan-crayola: #e59f71ff;
     --sinopia: #ba5a31ff;
     --rich-black-fogra-39: #0c0c0cff;
-    --russian-violet: #3e2f5bff;
+    --russian-violet: #3e2f5bff; */
 
     /* CSS HSL */
     --middle-blue-green: hsla(170, 42%, 71%, 1);
@@ -23,6 +23,7 @@
     --sinopia: hsla(18, 58%, 46%, 1);
     --rich-black-fogra-39: hsla(0, 0%, 5%, 1);
     --russian-violet: hsla(260, 32%, 27%, 1);
+    --font-14: 0.875rem;
     --font-16: 1rem;
     --font-18: 1.125rem;
     --font-24: 1.5rem;

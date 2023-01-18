@@ -33,7 +33,7 @@ export const FormPage: FC = () => {
                     isOpen={modalIsOpen}
                     onRequestClose={closeModal}
                     contentLabel="TestModal">
-                    <h2>Hello</h2>
+                    <h2>Employee has been successfully added</h2>
                     <button onClick={closeModal}>close</button>
                 </Modal>
             </main>
