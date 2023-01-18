@@ -33,7 +33,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "docs": "node_modules/.bin/typedoc --out docs src"
+        "docs": "node_modules/.bin/typedoc --out docs src/components"
     },
     "eslintConfig": {
         "extends": [

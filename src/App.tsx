@@ -13,6 +13,7 @@ const App = () => {
     useEffect(() => {
         dispatch(getEmployees());
     }, []);
+
     return (
         <div className="App">
             <BrowserRouter>

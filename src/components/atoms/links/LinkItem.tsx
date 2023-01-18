@@ -1,13 +1,14 @@
 import './index.css';
 import { Link } from 'react-router-dom';
-import { FC } from 'react';
 
 /**
  * A comment
  */
 export interface LinkProps
     extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {
+    /** label displayed on UI */
     label: string;
+    /**href page link */
     to: Partial<Location> | string;
     reloadDocument?: boolean;
     replace?: boolean;
@@ -16,14 +17,13 @@ export interface LinkProps
 
 /**
  * @component Component for a link item.
+ * @param {{props: <LinkProps>}}
  * @example
  * <a className="link" href="#">
  *   My label
  * </a>
- * @param {props: <linksProps>}
- * @returns {JSX.Element}
  */
-export const LinkItem = ({ to, label }: LinkProps) => {
+export const LinkItem = ({ to, label }: LinkProps): JSX.Element => {
     return (
         <Link className="link" to={to}>
             {label}

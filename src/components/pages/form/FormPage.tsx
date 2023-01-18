@@ -9,7 +9,7 @@ Modal.setAppElement('#root');
 /**
  * @component Form page component
  */
-export const FormPage = (): JSX.Element => {
+export const FormPage = () => {
     const [modalIsOpen, setIsOpen] = useState<boolean>(false);
 
     const openModal = () => {

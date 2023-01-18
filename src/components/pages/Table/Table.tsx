@@ -2,6 +2,7 @@ import { Datatable } from 'react_datatable_component_openclassrooms_project';
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import type { RootState } from '../../../redux/store';
 import './index.css';
+import { LinkItem } from '../../atoms';
 
 /**
  * @component Table page component. Return a title and Datatable component from lib
@@ -22,9 +23,10 @@ export const Table = (): JSX.Element => {
         return <p>ERROR</p>;
     }
     return (
-        <>
+        <main className="table-page">
             <h1>Employees list</h1>
             <Datatable employees={data} paginate />
-        </>
+            <LinkItem to="/" label="Home" />
+        </main>
     );
 };

@@ -1,4 +1,53 @@
-th,
-td {
+.table-page {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.table-page h1 {
+    margin: 2rem auto;
+}
+
+.table-page th,
+.table-page td {
     color: black;
+}
+
+.table-page th {
+    color: var(--color-tertiary);
+    padding: 8px;
+}
+
+.table-page .pagination-button.active {
+    background-color: var(--color-tertiary);
+    color: white;
+}
+
+.table-page .pagination-button:not(.active) {
+    transition: background-color 0.3s ease-in-out;
+    border-radius: 4px;
+}
+
+.table-page .pagination-button:hover:not(.active) {
+    opacity: 0.5;
+    background-color: var(--color-bkg);
+    color: white;
+}
+
+.table-page a {
+    display: inline-block;
+    margin: 2rem auto;
+}
+
+.table-page .select-search-bar label {
+    padding: 0.8rem 1rem;
+    background: var(--color-bkg);
+    color: white;
+    border-radius: 4px;
+}
+
+.table-container {
+    box-shadow: 0 0 10px var(--color-border);
+    padding: 8px 1rem;
+    border-radius: 4px;
 }
