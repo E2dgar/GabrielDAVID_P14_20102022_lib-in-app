@@ -3,7 +3,13 @@ import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import type { RootState } from '../../../redux/store';
 import './index.css';
 
-export const Table = () => {
+/**
+ * @component Table page component. Return a title and Datatable component from lib
+ * @example
+ * <h1>My title</h1>
+ * <Datatable employees={myData} />
+ */
+export const Table = (): JSX.Element => {
     const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
     const dataStatus = useAppSelector((state) => state.employees.status);

@@ -7,19 +7,23 @@ import { FC } from 'react';
  */
 export interface LinkProps
     extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {
-    replace?: boolean;
-    state?: any;
+    label: string;
     to: Partial<Location> | string;
     reloadDocument?: boolean;
-    label: string /*Label displayd*/;
+    replace?: boolean;
+    state?: any;
 }
 
 /**
- * Link component
- * @param {{label: string}} - The label displayed on UI
+ * @component Component for a link item.
+ * @example
+ * <a className="link" href="#">
+ *   My label
+ * </a>
+ * @param {props: <linksProps>}
  * @returns {JSX.Element}
  */
-export const LinkItem: FC<LinkProps> = ({ to, label }) => {
+export const LinkItem = ({ to, label }: LinkProps) => {
     return (
         <Link className="link" to={to}>
             {label}

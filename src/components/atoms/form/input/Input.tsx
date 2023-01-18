@@ -15,7 +15,7 @@ export type InputProps = {
  *
  *  <input type="text"/>
  * </label>
- * @param {props<InputProps>}
+ * @param {props: <InputProps>}
  * @returns {JSX.Element}
  */
 export const Input = ({ id, type, label, myRef }: InputProps) => {

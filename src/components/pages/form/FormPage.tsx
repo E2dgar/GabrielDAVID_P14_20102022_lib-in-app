@@ -1,12 +1,15 @@
 import './index.css';
 import { LinkItem } from '../../atoms/links';
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { Form } from '../../form';
 import Modal from 'react-modal';
 
 Modal.setAppElement('#root');
 
-export const FormPage: FC = () => {
+/**
+ * @component Form page component
+ */
+export const FormPage = (): JSX.Element => {
     const [modalIsOpen, setIsOpen] = useState<boolean>(false);
 
     const openModal = () => {
