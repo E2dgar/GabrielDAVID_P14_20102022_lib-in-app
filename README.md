@@ -1,4 +1,5 @@
-[![forthebadge](https://badges.aleen42.com/src/react.svg)]
+![forthebadge](https://badges.aleen42.com/src/react.svg)
+![forthebadge](https://badges.aleen42.com/src/typescript.svg)
 
 # HRNET
 
