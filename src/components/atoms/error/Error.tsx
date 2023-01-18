@@ -9,6 +9,6 @@ import './index.css';
  *
  * @returns {JSX.Element}
  */
-export const Error = () => {
+export const ErrorForm = () => {
     return <p className="error">This field is required</p>;
 };

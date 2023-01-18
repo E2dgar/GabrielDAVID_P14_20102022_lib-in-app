@@ -2,12 +2,16 @@ import './index.css';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import DatePicker from 'react-datepicker';
 import Select from 'react-select';
-import { Error } from '../atoms/error';
+import { ErrorForm } from '../atoms/error';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../redux/store';
 import { addEntrie } from '../../redux/reducers/employeesSlice';
 import { formatDate } from '../../helpers';
-import { STATE_OPTIONS, DEPT_OPTIONS } from '../../constants/content';
+import {
+    STATE_OPTIONS,
+    DEPT_OPTIONS,
+    MODAL_MSG
+} from '../../constants/content';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -31,7 +35,7 @@ export interface EmployeeData extends Inputs {
 }
 
 export type FormT = {
-    openModal: () => void;
+    openModal: (msg: string) => void;
 };
 
 /**
@@ -53,7 +57,6 @@ export const Form = ({ openModal }: FormT) => {
     const watchStartDate = watch('startDate', undefined);
 
     const onSubmit: SubmitHandler<InputsForm> = (data) => {
-        console.log('data', data);
         let formatedData: EmployeeData = { ...data };
 
         formatedData.dateOfBirth = formatDate(data.dateOfBirth);
@@ -61,12 +64,11 @@ export const Form = ({ openModal }: FormT) => {
 
         try {
             dispatch(addEntrie(formatedData));
-            openModal();
+            openModal(MODAL_MSG.success);
         } catch (error) {
             console.log(error);
+            openModal(MODAL_MSG.failed);
         }
-
-        console.log(formatedData);
     };
 
     return (
@@ -76,14 +78,14 @@ export const Form = ({ openModal }: FormT) => {
                 {...register('firstName', { required: true })}
                 placeholder="First Name"
             />
-            {errors.firstName && <Error />}
+            {errors.firstName && <ErrorForm />}
 
             <label className="sr-only">Last Name</label>
             <input
                 {...register('lastName', { required: true })}
                 placeholder="Last Name"
             />
-            {errors.lastName && <Error />}
+            {errors.lastName && <ErrorForm />}
 
             <div className="dates-container">
                 <div>
@@ -102,7 +104,7 @@ export const Form = ({ openModal }: FormT) => {
                             />
                         )}
                     />
-                    {errors.dateOfBirth && <Error />}
+                    {errors.dateOfBirth && <ErrorForm />}
                 </div>
                 <div>
                     <label className={`${watchStartDate ? '' : 'sr-only'}`}>
@@ -121,7 +123,7 @@ export const Form = ({ openModal }: FormT) => {
                             />
                         )}
                     />
-                    {errors.startDate && <Error />}
+                    {errors.startDate && <ErrorForm />}
                 </div>
             </div>
 
@@ -132,14 +134,14 @@ export const Form = ({ openModal }: FormT) => {
                     {...register('street', { required: true })}
                     placeholder="Street"
                 />
-                {errors.street && <Error />}
+                {errors.street && <ErrorForm />}
 
                 <label className="sr-only">City</label>
                 <input
                     {...register('city', { required: true })}
                     placeholder="City"
                 />
-                {errors.city && <Error />}
+                {errors.city && <ErrorForm />}
 
                 <label>State</label>
                 <Controller
@@ -163,7 +165,7 @@ export const Form = ({ openModal }: FormT) => {
                     type="number"
                     placeholder="Zip Code"
                 />
-                {errors.zipCode && <Error />}
+                {errors.zipCode && <ErrorForm />}
             </fieldset>
 
             <label>Department</label>

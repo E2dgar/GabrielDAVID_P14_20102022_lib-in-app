@@ -66,4 +66,9 @@ const DEPT_OPTIONS = [
     { value: 'Training', label: 'Training' }
 ];
 
-export { STATE_OPTIONS, DEPT_OPTIONS };
+const MODAL_MSG = {
+    success: 'Employee has been successfully added',
+    failed: 'An error occured, please retry'
+};
+
+export { STATE_OPTIONS, DEPT_OPTIONS, MODAL_MSG };

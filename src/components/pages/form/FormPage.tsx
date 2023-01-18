@@ -11,8 +11,10 @@ Modal.setAppElement('#root');
  */
 export const FormPage = () => {
     const [modalIsOpen, setIsOpen] = useState<boolean>(false);
+    const [modalMsg, setModalMsg] = useState<string>('');
 
-    const openModal = () => {
+    const openModal = (msg: string) => {
+        setModalMsg(msg);
         setIsOpen(true);
     };
     const closeModal = () => {
@@ -36,7 +38,7 @@ export const FormPage = () => {
                     isOpen={modalIsOpen}
                     onRequestClose={closeModal}
                     contentLabel="TestModal">
-                    <h2>Employee has been successfully added</h2>
+                    <h2>{modalMsg}</h2>
                     <button onClick={closeModal}>close</button>
                 </Modal>
             </main>
