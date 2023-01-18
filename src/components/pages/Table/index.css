@@ -15,7 +15,25 @@
 
 .table-page th {
     color: var(--color-tertiary);
-    padding: 8px;
+    color: white;
+}
+
+.table-page th:hover {
+    cursor: pointer;
+}
+
+.table-page th.active-sort-ascending::before,
+.table-page th.active-sort-descending::after {
+    color: var(--color-tertiary);
+}
+
+.active-sort-ascending::after,
+.active-sort-descending::before {
+    color: grey;
+}
+
+.table-page td.sorted {
+    filter: brightness(0.9);
 }
 
 .table-page .pagination-button.active {
@@ -48,6 +66,7 @@
 
 .table-container {
     box-shadow: 0 0 10px var(--color-border);
-    padding: 8px 1rem;
+    padding: 8px 1rem 20px;
     border-radius: 4px;
+    background: var(--color-bkg);
 }

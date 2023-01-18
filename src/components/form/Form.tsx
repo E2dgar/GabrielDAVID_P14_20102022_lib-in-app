@@ -129,27 +129,37 @@ export const Form = ({ openModal }: FormT) => {
 
             <fieldset>
                 <legend>Address</legend>
-                <label className="sr-only">Street</label>
+                <label className="sr-only" htmlFor="street">
+                    Street
+                </label>
                 <input
                     {...register('street', { required: true })}
                     placeholder="Street"
+                    id="street"
                 />
                 {errors.street && <ErrorForm />}
 
-                <label className="sr-only">City</label>
+                <label className="sr-only" htmlFor="city">
+                    City
+                </label>
                 <input
                     {...register('city', { required: true })}
                     placeholder="City"
+                    id="city"
                 />
                 {errors.city && <ErrorForm />}
 
-                <label>State</label>
+                <label id="state-label" htmlFor="state">
+                    State
+                </label>
                 <Controller
                     control={control}
                     name="state"
                     defaultValue={STATE_OPTIONS[0].value}
                     render={({ field }) => (
                         <Select
+                            aria-labelledby='"state-label'
+                            inputId="state"
                             className="select"
                             classNamePrefix="react-select"
                             options={STATE_OPTIONS}
@@ -168,13 +178,17 @@ export const Form = ({ openModal }: FormT) => {
                 {errors.zipCode && <ErrorForm />}
             </fieldset>
 
-            <label>Department</label>
+            <label id="dept-label" htmlFor="dept">
+                Department
+            </label>
             <Controller
                 control={control}
                 name="department"
                 defaultValue={DEPT_OPTIONS[0].value}
                 render={({ field }) => (
                     <Select
+                        aria-labelledby='"dept-label'
+                        inputId="dept"
                         className="select"
                         classNamePrefix="react-select"
                         options={DEPT_OPTIONS}

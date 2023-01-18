@@ -1,4 +1,4 @@
-import { Datatable } from 'react_datatable_component_openclassrooms_project';
+import { Datatable } from 'react_datatable_op14';
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import type { RootState } from '../../../redux/store';
 import './index.css';
@@ -25,7 +25,7 @@ export const Table = (): JSX.Element => {
     return (
         <main className="table-page">
             <h1>Employees list</h1>
-            <Datatable employees={data} paginate />
+            <Datatable employees={data} />
             <LinkItem to="/" label="Home" />
         </main>
     );

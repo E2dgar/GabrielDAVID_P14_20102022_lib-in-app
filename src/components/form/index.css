@@ -47,7 +47,7 @@ fieldset {
 
 input[type='submit'] {
     background-color: var(--color-tertiary);
-    color: var(--color-white);
+    color: var(--color-primary);
     border: none;
     margin-top: 2rem;
     max-width: max-content;
@@ -84,6 +84,7 @@ input::placeholder {
 /*Selects */
 .select svg {
     fill: var(--color-tertiary);
+    fill: white;
 }
 
 div.react-select__control,
@@ -109,12 +110,17 @@ div.react-select__control:hover {
     background: white;
 }
 
-.react-select__option:hover {
-    color: var(--color-primary);
+/* .react-select__option:hover {
+    color: black;
+} */
+
+input.react-select__input {
+    color: white !important;
 }
 
 div.react-select__single-value {
-    color: var(--color-white);
+    color: white;
+    font-size: var(--font-18);
 }
 
 .react-select__indicator-separator {
