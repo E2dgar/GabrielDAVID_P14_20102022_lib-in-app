@@ -17,6 +17,7 @@ export interface Inputs {
     street: string;
     city: string;
     state: string;
+    department: string;
     zipCode: number;
 }
 
@@ -52,6 +53,7 @@ export const Form = ({ openModal }: FormT) => {
     const watchStartDate = watch('startDate', undefined);
 
     const onSubmit: SubmitHandler<InputsForm> = (data) => {
+        console.log('data', data);
         let formatedData: EmployeeData = { ...data };
 
         formatedData.dateOfBirth = formatDate(data.dateOfBirth);
@@ -143,6 +145,7 @@ export const Form = ({ openModal }: FormT) => {
                 <Controller
                     control={control}
                     name="state"
+                    defaultValue={STATE_OPTIONS[0].value}
                     render={({ field }) => (
                         <Select
                             className="select"
@@ -166,7 +169,8 @@ export const Form = ({ openModal }: FormT) => {
             <label>Department</label>
             <Controller
                 control={control}
-                name="state"
+                name="department"
+                defaultValue={DEPT_OPTIONS[0].value}
                 render={({ field }) => (
                     <Select
                         className="select"

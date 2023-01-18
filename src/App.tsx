@@ -1,4 +1,3 @@
-import './App.css';
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FormPage } from './components/pages/form';
