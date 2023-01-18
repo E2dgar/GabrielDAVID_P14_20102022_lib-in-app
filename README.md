@@ -1,6 +1,8 @@
+[![forthebadge](https://badges.aleen42.com/src/react.svg)]
+
 # HRNET
 
-This project is RH app made with React.
+This project is a RH app made with React and Typescript.
 Allows you to add an employee and acces to a datatable.
 
 ## Requires
